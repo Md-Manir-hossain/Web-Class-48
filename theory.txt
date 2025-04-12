@@ -1,0 +1,38 @@
+
+
+Query = লিখার নিয়ম।
+
+===== CRUD =====
+
+C = Create
+R = Read
+U = Update
+D = Delete
+
+
+=========== Create Query  লিখার নিয়ম বা স্ট্রাকচার ============
+
+INSERT INTO List-Of-Students (Name, Roll, Class, Phone, Email, Address) VALUES ("Sojib Miah", 15, '01956-452112', 'sojib@gmail.com', 'Fatehpur West Para');
+
+
+
+=========== Read Query  লিখার নিয়ম বা স্ট্রাকচার ============
+
+SELECT * FROM list_of_students = ( * means All)
+SELECT Name FROM list_of_students
+SELECT id FROM list_of_students
+SELECT Email FROM list_of_students
+
+SELECT Name FROM list_of_students WHERE id=3
+
+
+=========== Update Query  লিখার নিয়ম বা স্ট্রাকচার ============
+
+UPDATE list_of_students SET Class='10 (Ten)' WHERE id=4;
+
+UPDATE list_of_students SET Role=3 WHERE id=3;
+
+
+=========== Delete Query  লিখার নিয়ম বা স্ট্রাকচার ============
+
+DELET FROM list_of_students WHERE id=2;
