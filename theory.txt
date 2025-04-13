@@ -36,3 +36,65 @@ UPDATE list_of_students SET Role=3 WHERE id=3;
 =========== Delete Query  লিখার নিয়ম বা স্ট্রাকচার ============
 
 DELET FROM list_of_students WHERE id=2;
+
+
+========== PHP Project to Database connection system or Method ==========
+
+File create first as like = confige.php
+
+<?php 
+
+new mysqli ('hostname', 'username', 'password', 'databasename');
+
+For example - 
+
+$connection = new mysqli ('localhost', 'root', '1', 'my_first_project');
+
+PHP Project এর সাথে Database connection হয়েছে কি না তা যাচাই করনের জন্য এই if else টি ব্যবহার করা যেতে পারে।
+
+if ($connection == true) {
+    echo "Connected Successfully!";
+}
+
+else {
+    echo "Connected Failed!";
+}
+
+
+?>
+
+
+
+Database থেকে PHP তে ডাটা আনার জন্য এই কোড গুলো ব্যবহার করতে হবে।
+
+<?php
+
+$query = 'SELECT * FROM list_of_students';
+$list_of_students = mysqli_query ($connection, $query);
+
+while ($row = mysqli_fetch_assoc ($list_of_students)) {
+    $id = $row['id'];
+    $Name = $row['Name'];
+    $Role = $row['Role'];
+    $Class = $row['Class'];
+    $Email = $row['Email'];
+    $Address = $row['Address'];
+
+    echo 
+'<tr>
+      <th scope="row"> '.$id.'</th>
+      <td>'.$Name.'</td>
+      <td>'.$Role.'</td>
+      <td> '.$Class.'</td>
+      <td> '.$Phone.'</td>
+      <td> '.$Email.' </td>
+      <td>'.$Address.'</td>
+      <td>
+      <a href="#" class="btn btn-primary"> Edit </a>
+      <a href="#" class="btn btn-danger"> Delete </a>
+      </td>
+    </tr>
+}
+
+?>
+
